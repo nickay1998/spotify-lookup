@@ -1,7 +1,7 @@
 import streamlit as st
 from streamlit import session_state as ss
 from utils import get_data
-from classes import parse_artist_json, parse_album_json
+from classes import parse_artist_json, parse_album_json, parse_track_json
 import math
 
 def search_spotify():
@@ -32,7 +32,10 @@ def search_spotify():
         for album in albums:
             st.write(album.name)
     with track_tab:
-        st.write('Tracks')
+        tracks = parse_track_json(search_json)
+
+        for track in tracks:
+            st.write(track.name)
 
     return search_json
 
