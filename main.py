@@ -1,3 +1,7 @@
 import streamlit as st
+from spotify import authenticate_spotify
+from streamlit import session_state as ss
 
-st.write('Hello world')
+authenticate_spotify()
+
+st.write(f'Connect to spotify API! Token: \'{ss["token"]}\'')
