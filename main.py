@@ -12,4 +12,3 @@ search_text = st.text_input('Search', key='search_text', placeholder='Search for
 
 if search_text != '':
     search_json = search_spotify()
-    st.write(search_json)

@@ -16,4 +16,13 @@ def search_spotify():
     ss['previous_search_text'] = search_text
     ss['previous_search_json'] = search_json
 
+    artist_tab, album_tab, track_tab = st.tabs(['Artists', 'Albums', 'Tracks'])
+
+    with artist_tab:
+        st.write('Artists')
+    with album_tab:
+        st.write('Albums')
+    with track_tab:
+        st.write('Tracks')
+
     return search_json
