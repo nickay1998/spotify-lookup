@@ -1,15 +1,20 @@
 import streamlit as st
 
 class Artist:
-    def __init__(self, json):
+    def __init__(self, json, album=False):
         self.url = json['external_urls']['spotify']
+        self.href = json['href']
+        self.uri = json['uri']
+        self.name = json['name']
+
+        if album:
+            return
+
         self.followers = json['followers']['total']
         self.genres = json['genres']
-        self.href = json['href']
         self.images = json['images']
-        self.name = json['name']
         self.popularity = json['popularity']
-        self.uri = json['uri']
+        
 
 def parse_artist_json(json):
     artists = []
